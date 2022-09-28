@@ -1,9 +1,10 @@
 import React from "react";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div>
-      <h1 className="text-3xl text-green-800 bg-yellow-600">Search Images</h1>
+      <Home />
     </div>
   );
 }
