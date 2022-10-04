@@ -1,6 +1,7 @@
 import React from "react";
 import videoBg from "../../assets/ocean-bg.mp4";
 import { BsSearch } from "react-icons/bs";
+import { buttons } from "../../helpers/buttonsTags";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -72,30 +73,15 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
         </form>
 
         <div className="mt-2 flex gap-2 flex-wrap">
-          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
-            flores
-          </button>
-          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
-            paisajes
-          </button>
-          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
-            cielo
-          </button>
-          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
-            playa
-          </button>
-          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
-            musica
-          </button>
-          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
-            naturaleza
-          </button>
-          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
-            paris
-          </button>
-          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
-            personas
-          </button>
+          {buttons.map((btn) => (
+            <button
+              onClick={() => setTerm(btn.title)}
+              key={btn.id}
+              className="text-white font-medium text-sm hover:underline-offset-2 hover:underline"
+            >
+              {btn.title}
+            </button>
+          ))}
         </div>
         <ToastContainer />
       </div>

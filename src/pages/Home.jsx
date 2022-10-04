@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Overlay from "../components/overlay video/Overlay";
-// import GalleryImages from "../components/gallery/GalleryImages";
 
 const Home = () => {
   const [data, setData] = useState({});
@@ -45,7 +44,11 @@ const Home = () => {
       >
         {data.hits
           ? data.hits.map((image) => (
-              <div key={image.id} className="h-[400px] w-auto lg:max-w-[500px]">
+              <div
+                key={image.id}
+                className="relative h-[400px] w-auto lg:max-w-[500px]"
+              >
+                <div className="absolute top-0 left-0 h-full w-full hover:bg-gray-700/20"></div>
                 <img
                   className="h-full w-full object-cover"
                   src={image.webformatURL}
