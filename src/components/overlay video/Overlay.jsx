@@ -54,7 +54,7 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
 
         <form
           onSubmit={handleSubmit}
-          className="w-full sm:w-[600px] md:w-[700px] p-4 flex justify-between items-center bg-gray-300 rounded-3xl mt-4"
+          className="w-full sm:w-[600px] md:w-[700px] p-4 flex justify-between items-center bg-gray-300 rounded-3xl shadow-md shadow-gray-700 mt-4"
         >
           <input
             className="w-full bg-transparent focus:outline-none placeholder:text-gray-700"
@@ -72,30 +72,30 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
         </form>
 
         <div className="mt-2 flex gap-2 flex-wrap">
-          <span className="text-white font-medium text-sm hover:underline cursor-pointer">
+          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
             flores
-          </span>
-          <span className="text-white font-medium text-sm hover:underline-offset-2 hover:underline cursor-pointer">
+          </button>
+          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
             paisajes
-          </span>
-          <span className="text-white font-medium text-sm hover:underline-offset-2 hover:underline cursor-pointer">
+          </button>
+          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
             cielo
-          </span>
-          <span className="text-white font-medium text-sm hover:underline-offset-2 hover:underline cursor-pointer">
+          </button>
+          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
             playa
-          </span>
-          <span className="text-white font-medium text-sm hover:underline-offset-2 hover:underline cursor-pointer">
+          </button>
+          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
             musica
-          </span>
-          <span className="text-white font-medium text-sm hover:underline-offset-2 hover:underline cursor-pointer">
+          </button>
+          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
             naturaleza
-          </span>
-          <span className="text-white font-medium text-sm hover:underline-offset-2 hover:underline cursor-pointer">
+          </button>
+          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
             paris
-          </span>
-          <span className="text-white font-medium text-sm hover:underline-offset-2 hover:underline cursor-pointer">
+          </button>
+          <button className="text-white font-medium text-sm hover:underline-offset-2 hover:underline">
             personas
-          </span>
+          </button>
         </div>
         <ToastContainer />
       </div>
