@@ -17,7 +17,7 @@ export const buttons = [
   },
   {
     id: 4,
-    title: "flores",
+    title: "gatos",
   },
   {
     id: 5,
