@@ -34,10 +34,12 @@ const Home = () => {
   };
 
   useEffect(() => {
-    pixabayApiCall(term, perPage);
+    setTimeout(() => {
+      pixabayApiCall(term, perPage);
+    }, 5000);
   }, [term, perPage]);
 
-  const fetchData = async () => {};
+  // const fetchData = async () => {};
 
   return (
     <div>
@@ -49,7 +51,7 @@ const Home = () => {
       />
 
       {loading ? (
-        <div className="w-full text-center mt-12">
+        <div className="w-full h-[300px] flex justify-center items-center">
           <Loading />
         </div>
       ) : (

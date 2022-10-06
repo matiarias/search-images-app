@@ -4,7 +4,7 @@ import loadingLottie from "../../assets/lottie files/97930-loading.json";
 
 const Loading = () => {
   return (
-    <div className="w-[250px] h-[100px]">
+    <div className="w-[200px]">
       <Lottie animationData={loadingLottie} loop={true} />
     </div>
   );
