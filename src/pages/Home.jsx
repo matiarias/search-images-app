@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../components/loading/Loading";
 import Overlay from "../components/overlay video/Overlay";
+import { Link } from "react-router-dom";
 // import InfiniteScroll from "react-infinite-scroll-component";
 
 const Home = () => {
@@ -21,7 +22,7 @@ const Home = () => {
   const pixabayApiCall = async (query) => {
     try {
       const resp = await fetch(
-        `https://pixabay.com/api/?q=${query}&key=28962423-2061919b5fb3ab8799e9f4b1a&page=${1}&per_page=${perPage}`
+        `https://pixabay.com/api/?q=${query}&key=28962423-2061919b5fb3ab8799e9f4b1a&page=1&per_page=${perPage}`
       );
 
       const results = await resp.json();
@@ -34,12 +35,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      pixabayApiCall(term, perPage);
-    }, 5000);
-  }, [term, perPage]);
-
-  // const fetchData = async () => {};
+    pixabayApiCall(term);
+  }, [term]);
 
   return (
     <div>
@@ -51,7 +48,7 @@ const Home = () => {
       />
 
       {loading ? (
-        <div className="w-full h-[300px] flex justify-center items-center">
+        <div className="w-full h-[250px] flex justify-center items-center">
           <Loading />
         </div>
       ) : (
@@ -61,17 +58,20 @@ const Home = () => {
         >
           {data
             ? data.map((image) => (
-                <div
+                <Link
                   key={image.id}
-                  className="relative h-auto w-full xl:max-w-[500px] border-2 border-gray-400"
+                  className="block"
+                  to={`/image/${image.id}`}
                 >
-                  <div className="absolute top-0 left-0 h-full w-full hover:bg-gray-700/20"></div>
-                  <img
-                    className="h-full w-full object-cover"
-                    src={image.webformatURL}
-                    alt={image.tags}
-                  />
-                </div>
+                  <div className="relative h-auto w-full xl:max-w-[500px] border-2 border-gray-400">
+                    <div className="absolute top-0 left-0 h-full w-full hover:bg-gray-700/20"></div>
+                    <img
+                      className="h-full w-full object-cover"
+                      src={image.webformatURL}
+                      alt={image.tags}
+                    />
+                  </div>
+                </Link>
               ))
             : null}
         </div>
