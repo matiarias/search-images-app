@@ -72,7 +72,7 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
           </button>
         </form>
 
-        <div className="mt-2 flex gap-2 flex-wrap">
+        <div className="mt-2 flex justify-center items-center gap-2 flex-wrap">
           {buttons.map((btn) => (
             <button
               onClick={() => setTerm(btn.title)}

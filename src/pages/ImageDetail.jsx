@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Loading from "../components/loading/Loading";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 const ImageDetail = () => {
   const [image, setImage] = useState([]);
@@ -37,7 +38,7 @@ const ImageDetail = () => {
           <Loading />
         </div>
       ) : (
-        <div className="h-screen w-full flex justify-center items-center px-4 py-0 md:px-12 md:py-12 bg-gradient-to-tr from-gray-500 to-gray-800">
+        <div className="relative h-screen w-full flex justify-center items-center px-4 py-0 md:px-12 md:py-12 bg-[#f7f3eb]">
           <div className="h-auto w-full md:h-full md:w-full">
             <img
               className="h-full w-full object-contain"
@@ -45,6 +46,13 @@ const ImageDetail = () => {
               alt={image.hits[0].tags}
             />
           </div>
+
+          <Link
+            to="/"
+            className="absolute top-4 left-4 px-8 py-2 rounded-xl bg-gradient-to-r from-blue-900 to-indigo-900"
+          >
+            <IoArrowBackCircleOutline size={40} className="text-white" />
+          </Link>
         </div>
       )}
     </>
