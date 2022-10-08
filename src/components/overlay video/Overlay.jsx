@@ -45,12 +45,12 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
 
       <div className="absolute top-0 left-0 h-full w-full bg-gray-900/40"></div>
       <div className="absolute top-0 left-0 h-full w-full px-8 flex flex-col justify-center items-center gap-4">
-        <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-bold text-center">
+        <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
           Increíbles Imágenes Gratis Para Descargar
         </h1>
-        <h2 className="text-white text-sm sm:text-base md:text-lg text-center">
-          Nuestro banco de imágenes tiene más de 1 millón de imágenes y videos
-          compartidos por nuestra talentosa comunidad.
+        <h2 className="text-white font-medium text-sm sm:text-base md:text-lg text-center">
+          Nuestro banco de imágenes tiene más de 1 millón de imágenes
+          compartidas por nuestra talentosa comunidad.
         </h2>
 
         <form
@@ -61,7 +61,6 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
             className="w-full bg-transparent focus:outline-none placeholder:text-gray-700"
             type="text"
             placeholder="Buscar imagenes"
-            autoFocus
             name={term}
             value={inputValue}
             onChange={handleChange}
@@ -77,7 +76,7 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
             <button
               onClick={() => setTerm(btn.title)}
               key={btn.id}
-              className="text-white font-medium text-sm hover:underline-offset-2 hover:underline"
+              className="text-white font-base text-sm hover:underline-offset-2 hover:underline"
             >
               {btn.title}
             </button>
