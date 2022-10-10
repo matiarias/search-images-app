@@ -3,6 +3,7 @@ import Loading from "../components/loading/Loading";
 import Overlay from "../components/overlay video/Overlay";
 import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
+import ScrollToTopButton from "../components/scroll to top button/ScrollToTopButton";
 
 const Home = () => {
   const [data, setData] = useState({});
@@ -18,6 +19,8 @@ const Home = () => {
   const [hasMore, setHasMore] = useState(true);
 
   const perPage = 20;
+
+  // ---------------------------------- fetch data function ----------------------------------------
 
   const pixabayApiCall = async (query, perPageNum) => {
     try {
@@ -38,6 +41,8 @@ const Home = () => {
     pixabayApiCall(term, perPage);
   }, [term, perPage]);
 
+  // -------------------------- fetch data infinite scroll ------------------------------------
+
   const fetchData = async () => {
     if (data.length > 200) {
       setHasMore(false);
@@ -57,6 +62,8 @@ const Home = () => {
     }
   };
 
+  // -----------------------------------------------------------------------------------------
+
   return (
     <div>
       <Overlay
@@ -71,10 +78,6 @@ const Home = () => {
           <Loading />
         </div>
       ) : (
-        // <div
-        //   className="columns-1 sm:columns-2 md:columns-3 space-y-4 gap-x-4 py-12 px-8
-        // bg-gray-200"
-        // >
         <InfiniteScroll
           className="columns-1 sm:columns-2 md:columns-3 space-y-4 gap-x-4 py-12 px-8
           bg-gray-200"
@@ -101,9 +104,8 @@ const Home = () => {
                 </Link>
               ))
             : null}
+          <ScrollToTopButton />
         </InfiniteScroll>
-
-        // </div>
       )}
     </div>
   );
