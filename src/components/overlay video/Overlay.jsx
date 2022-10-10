@@ -61,6 +61,7 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
             className="w-full bg-transparent focus:outline-none placeholder:text-gray-700"
             type="text"
             placeholder="Buscar imagenes"
+            autoFocus
             name={term}
             value={inputValue}
             onChange={handleChange}

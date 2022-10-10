@@ -25,7 +25,7 @@ const ScrollToTopButton = () => {
     backToTop && (
       <button
         onClick={handleClickToTop}
-        className="fixed bottom-8 right-2 md:right-4 p-6 md:p-4 rounded-full bg-indigo-900/80"
+        className="fixed bottom-4 right-2 md:right-4 p-6 md:p-4 rounded-full bg-indigo-900/80"
       >
         <BsArrowUpCircle size={30} className="text-white" />
       </button>

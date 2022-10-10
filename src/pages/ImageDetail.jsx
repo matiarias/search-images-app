@@ -38,7 +38,7 @@ const ImageDetail = () => {
           <Loading />
         </div>
       ) : (
-        <div className="relative h-screen w-full flex justify-center items-center px-4 py-0 md:px-12 md:py-12 bg-[#f7f3eb]">
+        <div className="relative h-screen w-full flex justify-center items-center px-4 py-0 md:px-12 md:py-12 bg-[#ebe6de]">
           <div className="h-auto w-full md:h-full md:w-full">
             <img
               className="h-full w-full object-contain"
@@ -49,9 +49,9 @@ const ImageDetail = () => {
 
           <Link
             to="/"
-            className="absolute top-4 left-4 px-8 py-2 rounded-xl bg-gradient-to-r from-blue-900 to-indigo-900"
+            className="absolute top-4 left-4 px-8 py-2 rounded-xl bg-gradient-to-r from-blue-900/80 to-indigo-900"
           >
-            <IoArrowBackCircleOutline size={40} className="text-white" />
+            <IoArrowBackCircleOutline size={30} className="text-white" />
           </Link>
         </div>
       )}

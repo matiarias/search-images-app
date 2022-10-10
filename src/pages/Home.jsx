@@ -29,7 +29,7 @@ const Home = () => {
       );
 
       const results = await resp.json();
-      console.log(results.hits);
+      // console.log(results.hits);
       setData(results.hits);
       setLoading(false);
     } catch (error) {
