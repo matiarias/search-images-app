@@ -38,7 +38,7 @@ const ImageDetail = () => {
           <Loading />
         </div>
       ) : (
-        <div className="relative h-screen w-full flex justify-center items-center px-4 py-0 md:px-12 md:py-12 bg-[#ebe6de]">
+        <div className="relative h-screen w-full flex justify-center items-center px-4 py-0 md:px-12 md:py-12 bg-[#dfdad2]">
           <div className="h-auto w-full md:h-full md:w-full">
             <img
               className="h-full w-full object-contain"
