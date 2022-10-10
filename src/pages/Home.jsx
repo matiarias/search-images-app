@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Loading from "../components/loading/Loading";
 import Overlay from "../components/overlay video/Overlay";
 import { Link } from "react-router-dom";
-// import InfiniteScroll from "react-infinite-scroll-component";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Home = () => {
   const [data, setData] = useState({});
@@ -19,10 +19,10 @@ const Home = () => {
 
   const perPage = 20;
 
-  const pixabayApiCall = async (query) => {
+  const pixabayApiCall = async (query, perPageNum) => {
     try {
       const resp = await fetch(
-        `https://pixabay.com/api/?q=${query}&key=28962423-2061919b5fb3ab8799e9f4b1a&page=1&per_page=${perPage}`
+        `https://pixabay.com/api/?q=${query}&key=28962423-2061919b5fb3ab8799e9f4b1a&page=${1}&per_page=${perPageNum}`
       );
 
       const results = await resp.json();
@@ -35,8 +35,27 @@ const Home = () => {
   };
 
   useEffect(() => {
-    pixabayApiCall(term);
-  }, [term]);
+    pixabayApiCall(term, perPage);
+  }, [term, perPage]);
+
+  const fetchData = async () => {
+    if (data.length > 200) {
+      setHasMore(false);
+    } else {
+      try {
+        const resp = await fetch(
+          `https://pixabay.com/api/?q=${term}&key=28962423-2061919b5fb3ab8799e9f4b1a&page=${
+            page + 1
+          }&per_page=${perPage}`
+        );
+        const results = await resp.json();
+        setData((oldPage) => [...oldPage, ...results.hits]);
+        setPage((prevPage) => prevPage + 1);
+      } catch (error) {
+        console.log("error al cargar la data del infinite scroll", error);
+      }
+    }
+  };
 
   return (
     <div>
@@ -52,9 +71,17 @@ const Home = () => {
           <Loading />
         </div>
       ) : (
-        <div
+        // <div
+        //   className="columns-1 sm:columns-2 md:columns-3 space-y-4 gap-x-4 py-12 px-8
+        // bg-gray-200"
+        // >
+        <InfiniteScroll
           className="columns-1 sm:columns-2 md:columns-3 space-y-4 gap-x-4 py-12 px-8
-        bg-gray-200"
+          bg-gray-200"
+          dataLength={data.length}
+          next={fetchData}
+          hasMore={hasMore}
+          loader={<Loading />}
         >
           {data
             ? data.map((image) => (
@@ -74,7 +101,9 @@ const Home = () => {
                 </Link>
               ))
             : null}
-        </div>
+        </InfiniteScroll>
+
+        // </div>
       )}
     </div>
   );
