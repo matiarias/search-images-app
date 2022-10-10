@@ -1,11 +1,10 @@
 # Search Images App
 
-A simple app to search different images and photos using the Pixabay API.
-Built the app with React, JavaScript, Tailwind, react-router-dom, react infinite scroll component, react toastify, lottie react and react icons.
+A simple app to search different images and photos using the Pixabay API. I Built the app with React, JavaScript, Tailwind, react-router-dom-V6, react infinite scroll component, react toastify, lottie react and react icons.
 
 ## Link
 
-Deploy Site: [https://the-world-weather-app.vercel.app/](https://the-world-weather-app.vercel.app/)
+Deploy Site: [https://mil-imagenes-app.vercel.app](https://mil-imagenes-app.vercel.app)
 
 ## Screenshots
 
@@ -34,7 +33,7 @@ For the data requests i used
 - lottie react
 - react icons
 
-## How to use:
+## How to use
 
 > Before you can run this app, you need to get an API KEY from Pixabay, please go to [Pixabay API](https://pixabay.com/service/about/api/)
 
