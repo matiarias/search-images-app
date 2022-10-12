@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { buttons } from "../../helpers/buttonsTags";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SocialMedia from "../social media/SocialMedia";
 
 const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
   const handleChange = ({ target }) => {
@@ -88,6 +89,7 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
         </div>
         <ToastContainer />
       </div>
+      <SocialMedia />
     </div>
   );
 };
