@@ -38,7 +38,7 @@ const ImageDetail = () => {
           <Loading />
         </div>
       ) : (
-        <div className="relative h-screen w-full flex flex-col justify-center items-center gap-4 px-4 py-4 md:px-12 md:py-0 bg-[#dfdad2]">
+        <div className="relative h-screen w-full flex flex-col justify-center items-center gap-4 px-4 py-4 md:px-12 md:py-0 bg-gradient-to-tr from-gray-100 via-gray-200 to-gray-400">
           <div className="h-auto w-full md:h-[400px] md:w-full">
             <img
               className="h-full w-full object-contain"
@@ -49,22 +49,22 @@ const ImageDetail = () => {
 
           <div className="flex flex-col justify-center items-center gap-2">
             <a href={image.hits[0].pageURL} target="_blank">
-              <span className="text-red-900 font-bold text-xl underline underline-offset-4">
+              <span className="text-emerald-800 font-bold text-xl underline underline-offset-4">
                 {image.hits[0].user}
               </span>
             </a>
 
-            <h3 className="font-bold text-gray-700 text-xl">
+            <h3 className="font-bold text-gray-600 text-xl">
               Vistas:{" "}
-              <span className="text-blue-900 font-bold text-xl">
+              <span className="text-blue-800 font-bold text-xl">
                 {image.hits[0].views}
               </span>
             </h3>
 
-            <h3 className="font-bold text-gray-700 text-xl">
-              Descargas:{" "}
-              <span className="text-blue-900 font-bold text-xl">
-                {image.hits[0].downloads}
+            <h3 className="font-bold text-gray-600 text-xl">
+              Tags:{" "}
+              <span className="text-blue-800 font-bold text-xl">
+                {image.hits[0].tags}
               </span>
             </h3>
 
