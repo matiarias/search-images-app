@@ -1,6 +1,6 @@
 import React from "react";
 import videoBg from "../../assets/ocean-bg.mp4";
-import { BsSearch } from "react-icons/bs";
+import { FaSearch } from "react-icons/fa";
 import { buttons } from "../../helpers/buttonsTags";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -68,7 +68,10 @@ const Overlay = ({ inputValue, setInputValue, term, setTerm }) => {
           />
 
           <button className="px-4 py-1" type="submit">
-            <BsSearch className="text-xl text-gray-900 hover:text-green-700" />
+            <FaSearch
+              size={20}
+              className="text-blue-800 hover:text-green-700 animate-pulse"
+            />
           </button>
         </form>
 

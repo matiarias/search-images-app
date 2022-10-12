@@ -38,8 +38,8 @@ const ImageDetail = () => {
           <Loading />
         </div>
       ) : (
-        <div className="relative h-screen w-full flex justify-center items-center px-4 py-0 md:px-12 md:py-12 bg-[#dfdad2]">
-          <div className="h-auto w-full md:h-full md:w-full">
+        <div className="relative h-screen w-full flex flex-col justify-center items-center gap-4 px-4 py-4 md:px-12 md:py-0 bg-[#dfdad2]">
+          <div className="h-auto w-full md:h-[400px] md:w-full">
             <img
               className="h-full w-full object-contain"
               src={image.hits[0].largeImageURL}
@@ -47,9 +47,37 @@ const ImageDetail = () => {
             />
           </div>
 
+          <div className="flex flex-col justify-center items-center gap-2">
+            <a href={image.hits[0].pageURL} target="_blank">
+              <span className="text-red-900 font-bold text-xl underline underline-offset-4">
+                {image.hits[0].user}
+              </span>
+            </a>
+
+            <h3 className="font-bold text-gray-700 text-xl">
+              Vistas:{" "}
+              <span className="text-blue-900 font-bold text-xl">
+                {image.hits[0].views}
+              </span>
+            </h3>
+
+            <h3 className="font-bold text-gray-700 text-xl">
+              Descargas:{" "}
+              <span className="text-blue-900 font-bold text-xl">
+                {image.hits[0].downloads}
+              </span>
+            </h3>
+
+            <a href={image.hits[0].largeImageURL} download target="_blank">
+              <button className="px-16 py-4 md:py-2 rounded-3xl bg-gradient-to-r from-green-900 via-green-700 to-lime-800 text-white font-medium border-2 border-gray-800 mt-2">
+                Descargar
+              </button>
+            </a>
+          </div>
+
           <Link
             to="/"
-            className="absolute top-4 left-4 px-8 py-2 rounded-xl bg-gradient-to-r from-blue-900/80 to-indigo-900"
+            className="absolute top-2 left-2 md:top-4 md:left-4 px-8 py-2 rounded-xl bg-gradient-to-r from-blue-900/80 to-indigo-900"
           >
             <IoArrowBackCircleOutline size={30} className="text-white" />
           </Link>
